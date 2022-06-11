@@ -11,7 +11,7 @@
     --card-gap-left: 30px;
     --card-item: 3;
     --soc-grey-color: #AFB1B8;
-    --cubic-bezier:cubic-bezier(0.4, 0, 0.2, 1);
+    --cubic-bezier: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .visually-hidden {
@@ -165,23 +165,19 @@ margin-left: auto;
     display: flex;
     align-items: center;
     position: relative;
-    transition: color;
-}
+    transition: color var(--cubic-bezier);}
+    
 
 
 .header-link:hover,
 .header-link:focus {
     color: var(--blue-color);
-    
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  
+    transition: var(--cubic-bezier);
 }
 .contacs-icon{
     margin-right: 10px;
     fill: currentColor;
 }
-
-
 /*-------------Hero--------------*/
 .hero {
     text-align: center;
@@ -216,20 +212,14 @@ button.hero-btn {
     background-color: var(--blue-color);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     border-radius: 4px;
-    transition: background-color,
-    box-shadow,
-    border-radius;
-    }
-
+    transition: background-color var(--cubic-bezier),
+    box-shadow var(--cubic-bezier),
+    border-radius var(--cubic-bezier);}
 
 .hero-btn:hover,
 .hero-btn:focus {
-    background-color: #188CE8;;
-    
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) ,border-radius 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: #188CE8;
 }
-
 /*-----------------Peculiarities------------*/
 .peculiarities{
     --card-item: 4;
@@ -246,8 +236,7 @@ background-repeat: no-repeat;
 
 }
 .icon-rect::before{
-    background-image: url(../image/antenna.svg);
-    
+    background-image: url(../image/antenna.svg); 
 }
 .icon-clock::before{
     background-image: url(../image/clock.svg);
@@ -264,7 +253,6 @@ background-repeat: no-repeat;
     margin-bottom:10px;
     color: var(--black-color);
 }
-
 /*---------------About-----------------*/
 .about{
     padding-top: 0;
@@ -279,10 +267,9 @@ background-repeat: no-repeat;
 position: absolute;
 color: var(--white-color);
 bottom:  0;
-
 background: rgba(47, 48, 58, 0.8);
 width: 100%;
-height: 24%;
+padding: 27px;
 }
 
     /*-----------------TEAM---------------*/
@@ -334,25 +321,23 @@ height: 24%;
     align-items: center;
     justify-content: center;
     fill: var(--soc-grey-color);
-    transition: background-color;
+    transition: fill var(--cubic-bezier), background-color var(--cubic-bezier);
 }
 .team-soc-link:hover,
 .team-soc-link:focus{background-color: var(--blue-color);
     fill: var(--white-color);
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    
 }
 /*__________________Clients_______________________*/
 
 .clients-list{
     --card-item:6;
 }
-
 .clients-item:last-child{margin-right: 0;}
 
 .clients-link{
     display: flex;
     fill: var(--soc-grey-color);
-    
     height: 92px;
     border: 1px solid #AFB1B8;
     border-radius: 4px;
@@ -360,14 +345,13 @@ height: 24%;
     align-items: center;
     justify-content: center;
     border-radius: 4px;
-    transition: border;
+    transition: fill var(--cubic-bezier),
+    border var(--cubic-bezier);
 }
 
 .clients-link:focus, .clients-link:hover{
     fill: var(--blue-color);
     border: 1px solid var(--blue-color);
-    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    
 }
 
 /*--------------FOOTER------------------*/
@@ -383,29 +367,20 @@ background: var(--footer-color);
 display: block;}
 address {
     font-style: inherit;
-    
-    
 }
 .footer-link[target="_blank"] {
     color: var(--white-color);
 }
-
 .footer-item:not(:last-child){
 margin-bottom: 9px;}
 .footer-link {
     font-weight: 400;
     font-size: 14px;
     line-height: 1.71;
-
     letter-spacing: 0.03em;
-    color: rgba(225, 225, 225, 0.6)
+    color: rgba(225, 225, 225, 0.6);
+    transition: color var(--cubic-bezier);
 }
-
-.footer-link:hover,
-.footer-link:focus {
-    color: var(--blue-color);
-}
-
 
 .footer-link:hover,
 .footer-link:focus {
@@ -417,15 +392,12 @@ margin-bottom: 9px;}
     line-height: 1.14;
     color: var(--white-color);
     text-transform: uppercase;
-   
-    
 }
 .footer-logo-address{
     margin-right: 70px;
 }
 .footer .footer-container{
     display: block;
-   
 }
 .title-footer{
     margin-bottom: 20px;
@@ -435,11 +407,10 @@ margin-bottom: 9px;}
     fill: var(--white-color);
     background: rgba(255, 255, 255, 0.1);
     border-radius: 50%;
-    transition: background-color;
+    transition: background-color var(--cubic-bezier);
 }
 .footer .team-soc-link:hover, .footer .team-soc-link:focus{
     background-color: var(--blue-color);
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 
@@ -466,6 +437,9 @@ button.filter-btn {
     text-align: center;
     letter-spacing: 0.03em;
     color: var(--black-color);
+    transition: background-color var(--cubic-bezier),
+    box-shadow var(--cubic-bezier),
+    color var(--cubic-bezier);
 }
 
 .filter-btn:hover,
@@ -475,8 +449,6 @@ button.filter-btn {
     box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
         0px 1px 2px rgba(0, 0, 0, 0.08),
         0px 2px 2px rgba(0, 0, 0, 0.12);
-    border-radius: 4px;
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /*--------------------PORTFOLIO-------------------------*/
@@ -494,7 +466,6 @@ button.filter-btn {
     letter-spacing: 0.06em;
     color: var(--black-color);
 }
-
 .portfolio-bac{
     position: relative;
     overflow: hidden;
@@ -507,9 +478,11 @@ button.filter-btn {
     background-color: rgba(33, 150, 243, 0.9);
     color: var(--white-color);
     transform: translateY( 100%);
-    transition: transform 250ms linear;
+    transition: transform var(--cubic-bezier),background-color var(--cubic-bezier),
+    color var(--cubic-bezier);
 }
-.portfolio-item:hover .portfolio-bac-text{
+.portfolio-link:hover .portfolio-bac-text,
+.portfolio-link:focus .portfolio-bac-text{
     transform: translateY(0);
 }
 .portfolio-text {
@@ -524,15 +497,14 @@ box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12),
 0px 4px 4px rgba(0, 0, 0, 0.06),
 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
-
 .backdrop{
     width: 100%;
     height: 100%;
   background: rgba(0, 0, 0, 0.8);
   position: fixed;
   top: 0;
-transition: opacity 250ms,
-visibility 250ms;
+transition: opacity var(--cubic-bezier)
+visibility var(--cubic-bezier);
 }
 .backdrop.is-hidden .modal{
     transform: translate(-50%, -50%) scale(0);
@@ -549,7 +521,7 @@ visibility 250ms;
     0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
     transform: translate(-50%, -50%) scale(1);
-    transition: transform 250ms;
+    transition: transform var(--cubic-bezier);
 }
 .modal-btn{
     border-radius: 50%;
